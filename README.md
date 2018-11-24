@@ -1,6 +1,3 @@
-# WaifuGen
-A small program to generate your best waifu.
-Also benn used to learning to me.
-
-## Adress Here:
+# WaifuGenerater
 https://reed-chan.github.io/Random-waifu-generater/
+一键生成老婆 施工中
