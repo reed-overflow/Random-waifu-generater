@@ -7,6 +7,16 @@ function startGenerater() {
     generateEyes();
     generateAttribute();
     generateCharacter();
+    generateCup();
+    generateSkin();
+}
+
+function generateCup() {
+    randomData("cupsize",Cupsize_data);
+}
+
+function generateSkin() {
+    randomData("skin",Skin_data);
 }
 
 function generateBody() {
@@ -64,7 +74,7 @@ function randomRGB() {
     return "#"+rValue+gValue+bValue;
 }
 function randomData(elementId,dataName) {
-    var t1Num = Math.floor(Math.random()*dataName.count);
+    var t1Num = Math.floor(Math.random()*dataName.length);
     var text1 = document.getElementById(elementId);
-    text1.innerHTML = dataName.value[t1Num];    
+    text1.innerHTML = dataName[t1Num];    
 }
