@@ -10,11 +10,11 @@ function startGenerater() {
 }
 
 function generateBody() {
-    var height = normalDistribution(165, 3)
+    var height = normalDistribution(165, 5)
     height = Math.round(height);
     var text1 = document.getElementById("height");
     text1.innerHTML=height;
-    var bmi = normalDistribution(20, 3);
+    var bmi = normalDistribution(20, 1);
     var weight = Math.round(bmi*(height/100)*(height/100));
     var text2 = document.getElementById("weight");
     text2.innerHTML = weight;
