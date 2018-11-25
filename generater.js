@@ -1,35 +1,70 @@
+const PI = 3.14;
 
 function startGenerater() {
     generateBody();
     generateAge();
     generateHair();
+    generateEyes();
+    generateAttribute();
+    generateCharacter();
 }
 
 function generateBody() {
-    var height = Math.round(Math.random()*40)+140;
-    var text1=document.getElementById("height");
+    var height = normalDistribution(165, 3)
+    height = Math.round(height);
+    var text1 = document.getElementById("height");
     text1.innerHTML=height;
-    var bmi = (Math.random()*6)+18;
+    var bmi = normalDistribution(20, 3);
     var weight = Math.round(bmi*(height/100)*(height/100));
-    var text2=document.getElementById("weight");
-    text2.innerHTML=weight;
+    var text2 = document.getElementById("weight");
+    text2.innerHTML = weight;
 }
-
 function generateAge() {
-    var gH = Math.round(Math.random()*26)+14;
-    var text1=document.getElementById("age");
-    text1.innerHTML=gH;    
+    var gH = Math.round(normalDistribution(20, 2));
+    var text1 = document.getElementById("age");
+    text1.innerHTML = gH;    
 }
-
 function generateHair() {
-    var t1Num = Math.floor(Math.random()*HairData.styleCount);
-    var text1=document.getElementById("hairstyle");
-    text1.innerHTML=HairData.style[t1Num];
-    var t2Num = Math.floor(Math.random()*ColorData.colorCount);
-    var text2=document.getElementById("hairColor");
-    text2.innerHTML=ColorData.color[t2Num];
+    randomData("hairstyle",Hair_data);
+    var newColor = randomRGB();
+    var text2 = document.getElementById("hairColor");
+    text2.innerHTML = newColor;
+    text2.style.backgroundColor = newColor;
+}
+function generateEyes() {
+    var text1 = document.getElementById("eyeColor");
+    var newColor = randomRGB();
+    text1.innerHTML = newColor;
+    text1.style.backgroundColor = newColor;
+}
+function generateAttribute() {
+    randomData("attribute",Attribute_data);
+}
+function generateCharacter() {  
+    randomData("character",Character_data);
 }
 
-function generate() {
-    
+function normalDistribution(u, v) {
+    // Box-Muller
+    var x1 = Math.random();
+    var x2 = Math.random();
+    var nD = Math.sqrt(-2*Math.log(x1))*Math.sin(2*PI*x2)*v+u;
+    return nD;
+}
+function randomRGB() {
+    var rValue = Math.round(Math.random()*255).toString(16);
+    var gValue = Math.round(Math.random()*255).toString(16);
+    var bValue = Math.round(Math.random()*255).toString(16);
+    if(rValue.length <2)
+        rValue = "0" + rValue;
+    if(gValue.length <2)
+        gValue = "0" + gValue;
+    if(bValue.length <2)
+        bValue = "0" + bValue;                
+    return "#"+rValue+gValue+bValue;
+}
+function randomData(elementId,dataName) {
+    var t1Num = Math.floor(Math.random()*dataName.count);
+    var text1 = document.getElementById(elementId);
+    text1.innerHTML = dataName.value[t1Num];    
 }
