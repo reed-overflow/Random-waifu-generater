@@ -1,6 +1,6 @@
 const PI = 3.14159;
 
-function startGenerater() {
+function startGenerator() {
     generateBody();
     generateAge();
     generateHair();
