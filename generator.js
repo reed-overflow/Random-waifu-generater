@@ -3,10 +3,10 @@ let wifeCounter = 0;
 
 function startGenerator() {
     if (wifeCounter) {
-        insertExWife(9);
+        insertExWife(8);
     }
     generateBody();
-    generateAge();
+    // generateAge();
     generateHair();
     generateEyes();
     generateAttribute();
