@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="generator.js"></script>
     <script src="data.js"></script>
-    <title>宠物猫Random petCat generator</title>
+    <title>猫咪生成器Random PetCat generator</title>
 
     <!-- 优化一下移动端展示效果 -->
     <!-- https://www.bootstrapcdn.com/ -->
@@ -21,25 +21,30 @@
     </div>
     <div class="table-responsive">
     <table id="wifeTable" class="table table-hover">
-        <tr>
+        <tr hidden="hidden">
             <td id="heightText">身高</td>
             <td id="height">--</td>
         </tr>
-        <tr>
-            <td id="weightText">体重</td>
-            <td id="weight">--</td>
-        </tr>
-        <tr>
+        
+        <tr hidden="hidden">
             <td id="cupsizeText">CUP</td>
             <td id="cupsize">--</td>
         </tr>
         <tr>
-            <td id="skinText">肤色</td>
+            <td id="skinText">品种</td>
             <td id="skin">--</td>
         </tr>
-        <tr hidden>
+        <tr >
+            <td id="sexText">性别</td>
+            <td id="sex">--</td>
+        </tr>
+        <tr>
             <td id="ageText">年龄</td>
             <td id="age">--</td>
+        </tr>
+        <tr hidden="hidden">
+            <td id="weightText">体重</td>
+            <td id="weight">--</td>
         </tr>
         <tr>
             <td id="hairstyleText">发型</td>
@@ -53,7 +58,7 @@
             <td id="eyeColorText">瞳色</td>
             <td id="eyeColor">--</td>
         </tr>
-        <tr>
+        <tr hidden>
             <td id="attributeText">属性</td>
             <td id="attribute">--</td>
         </tr>
@@ -65,9 +70,9 @@
     </table>
     
     <div class="form-group" style="text-align:center;">
-        <button type="button" onclick="startGenerator()" class="btn btn-primary btn-lg">一键生成老婆</button>
+        <button type="button" onclick="startGenerator()" class="btn btn-primary btn-lg">一键生成猫咪</button>
     </div>
-    <div id="exWives">
+    <!--<div id="exWives">
 		<h2>前妻列表</h2>
 		<table id="exWivesTable" class="table table-hover exWivesTable">
 			<tr>
@@ -83,7 +88,7 @@
 				<th>性格</th>
 			</tr>
 		</table>
-    </div>
+    </div>-->
     </div>
 </body>
 
