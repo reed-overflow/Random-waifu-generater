@@ -17,7 +17,8 @@
 
 <body class="container">
     <h1 style="margin:30px 0px 10px 0px;">老婆生成器v0.02</h1>
-    <table class="table table-hover">
+    <table id="wifeTable" class="table table-hover">
+        <caption style="word-break:keep-all">你的第0个老婆</caption>
         <tr>
             <td id="heightText">身高</td>
             <td id="height">--</td>
@@ -63,6 +64,23 @@
     <div class="form-group" style="text-align:center;">
         <button type="button" onclick="startGenerator()" class="btn btn-primary btn-lg">一键生成老婆</button>
     </div>
+    <div id="exWives">
+		<h2>前妻列表</h2>
+		<table id="exWivesTable" class="table table-hover exWivesTable">
+			<tr>
+				<th>身高</th>
+				<th>体重</th>
+				<th>CUP</th>
+				<th>肤色</th>
+				<th>年龄</th>
+				<th>发型</th>
+				<th>发色</th>
+				<th>瞳色</th>
+				<th>属性</th>
+				<th>性格</th>
+			</tr>
+		</table>
+	</div>
     <div class="form-group" style="text-align:right;">
         <a href="https://adnmb1.com/t/15788691">讨论地址</a>
         <a href="https://github.com/reed-chan/Random-waifu-generater">Source</a>
@@ -70,7 +88,7 @@
 </body>
 
 <style>
-	tr > td {
+	#wifeTable tr > td {
 		width: 50%;
 	}
 </style>
