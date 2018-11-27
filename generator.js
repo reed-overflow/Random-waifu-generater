@@ -15,7 +15,9 @@ function startGenerator() {
     generateSkin();
     wifeCounter++;
     updateCounterText();
+
     document.getElementById('findWaifu').disabled = "";
+
 }
 
 function generateCup() {
@@ -97,6 +99,7 @@ function insertExWife(cellCount) {
 function updateCounterText() {
     let t = document.getElementById("wifeTable");
     t.caption.innerHTML = t.caption.innerHTML.replace(/\d+/, wifeCounter);
+
 }
 function findWaifu(hair, cup, skin) {
     let hairstyle = document.getElementById('hairstyle').innerText;
@@ -110,4 +113,5 @@ function findWaifu(hair, cup, skin) {
     let qs = [hairEng, cupEng, skinEng, attrEng].filter(d => d).join('+');
     let url = 'https://chan.sankakucomplex.com/?tags=' + qs;
     window.open(url);
+
 }
