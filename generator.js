@@ -1,6 +1,10 @@
 const PI = 3.14159;
+let wifeCounter = 0;
 
 function startGenerator() {
+    if (wifeCounter) {
+        insertExWife(9);
+    }
     generateBody();
     generateAge();
     generateHair();
@@ -9,6 +13,8 @@ function startGenerator() {
     generateCharacter();
     generateCup();
     generateSkin();
+    wifeCounter++;
+    updateCounterText();
 }
 
 function generateCup() {
@@ -77,4 +83,17 @@ function randomData(elementId,dataName) {
     var t1Num = Math.floor(Math.random()*dataName.length);
     var text1 = document.getElementById(elementId);
     text1.innerHTML = dataName[t1Num];    
+}
+function insertExWife(cellCount) {
+    let exWivesTable = document.getElementById("exWivesTable");
+    let row = exWivesTable.insertRow(1);
+    let wifeTable = document.getElementById("wifeTable");
+    for (let i = 0; i <= cellCount; i++) {
+        let cell = row.insertCell(i);
+        cell.innerHTML = wifeTable.rows[i].cells[1].innerHTML;
+    };
+}
+function updateCounterText() {
+    let t = document.getElementById("wifeTable");
+    t.caption.innerHTML = t.caption.innerHTML.replace(/\d/, wifeCounter);
 }
