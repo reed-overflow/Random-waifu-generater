@@ -1,4 +1,4 @@
-const PI = 3.14159;
+const PI = Math.PI;
 let wifeCounter = 0;
 
 function startGenerator() {
@@ -95,5 +95,5 @@ function insertExWife(cellCount) {
 }
 function updateCounterText() {
     let t = document.getElementById("wifeTable");
-    t.caption.innerHTML = t.caption.innerHTML.replace(/\d/, wifeCounter);
+    t.caption.innerHTML = t.caption.innerHTML.replace(/\d+/, wifeCounter);
 }
