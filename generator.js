@@ -9,14 +9,15 @@ function startGenerator() {
     generateCharacter();
     generateCup();
     generateSkin();
+    document.getElementById('findWaifu').disabled = "";
 }
 
 function generateCup() {
-    randomData("cupsize",Cupsize_data);
+    randomData("cupsize", Cupsize_data);
 }
 
 function generateSkin() {
-    randomData("skin",Skin_data);
+    randomData("skin", Object.keys(Skin_data));
 }
 
 function generateBody() {
@@ -35,7 +36,7 @@ function generateAge() {
     text1.innerHTML = gH;    
 }
 function generateHair() {
-    randomData("hairstyle",Hair_data);
+    randomData("hairstyle", Object.keys(Hair_data));
     var newColor = randomRGB();
     var text2 = document.getElementById("hairColor");
     text2.innerHTML = newColor;
@@ -77,4 +78,17 @@ function randomData(elementId,dataName) {
     var t1Num = Math.floor(Math.random()*dataName.length);
     var text1 = document.getElementById(elementId);
     text1.innerHTML = dataName[t1Num];    
+}
+function findWaifu(hair, cup, skin) {
+    let hairstyle = document.getElementById('hairstyle').innerText;
+    let cupsize = document.getElementById('cupsize').innerText;
+    let skincolor = document.getElementById('skin').innerText;
+    let attribute = document.getElementById('attribute').innerText;
+    let hairEng = Hair_data[hairstyle];
+    let cupEng = Cupsize_map[cupsize];
+    let skinEng = Skin_data[skincolor];
+    let attrEng = Attribute_map[attribute];
+    let qs = [hairEng, cupEng, skinEng, attrEng].filter(d=>d).join('+');
+    let url = 'https://chan.sankakucomplex.com/?tags=' + qs;
+    window.open(url);
 }

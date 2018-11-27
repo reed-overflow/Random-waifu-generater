@@ -1,20 +1,20 @@
-Hair_data = [
-    "单马尾",
-    "双马尾",
-    "麻花辫",
-    "包子头",
-    "公主辫",
-    "长直",
-    "姬发式",
-    "短发",
-    "中长发",
-    "长发",
-    "卷发",
-    "波波头",
-    "双钻头(螺旋双马尾)",
-    "低马尾",
-    "长双马尾"
-];
+Hair_data = {
+    "单马尾": "ponytail",
+    "双马尾": "twintails",
+    "麻花辫": "braid",
+    "包子头": "bun_cover",
+    "公主辫": "updo",
+    "长直": "long_hair",
+    "姬发式": "hime_cut",
+    "短发": "short_hair",
+    "中长发": "medium_hair",
+    "长发": "long_hair",
+    "卷发": "curly_hair",
+    "波波头": "bob_cut",
+    "双钻头(螺旋双马尾)": "twin_drills",
+    "低马尾": "low_ponytail",
+    "长双马尾": "long_twintails"
+};
 
 Attribute_data = [
     "青梅竹马",
@@ -50,6 +50,13 @@ Attribute_data = [
     "伪娘",
     "警察"
 ];
+
+Attribute_map = {
+    "猫娘": "nekomimi",
+    "吸血鬼": "vampire",
+    "眼镜娘": "megane",
+    "伪娘": "trap"
+}
 
 Character_data = [
     "运动达人",
@@ -95,15 +102,26 @@ Cupsize_data = [
     "G"
 ];
 
-Skin_data = [
-    "洁白",
-    "正常",
-    "正常",
-    "正常",
-    "正常",
-    "正常",
-    "正常",
-    "正常",
-    "正常",
-    "黑妹"
-];
+Cupsize_map = {
+    "AA": "pettanko",
+    "A": "",
+    "B": "",
+    "C": "medium_breasts",
+    "D": "large_breasts",
+    "E": "large_breasts",
+    "F": "huge_breasts",
+    "G": "huge_breasts"
+}
+
+Skin_data = {
+    "洁白": "pale_skin",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "正常": "",
+    "黑妹": "dark_skin"
+};
