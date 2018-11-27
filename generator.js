@@ -1,6 +1,7 @@
-const PI = 3.14159;
+const PI = Math.PI;
 
 function startGenerator() {
+    generateName();
     generateBody();
     generateAge();
     generateHair();
@@ -17,6 +18,15 @@ function generateCup() {
 
 function generateSkin() {
     randomData("skin",Skin_data);
+}
+
+function generateName() {
+    var sur = Surname[Math.floor(Surname.length * Math.random())];
+    var personal = PersonalName[Math.floor(PersonalName.length * Math.random())];
+    if (Math.random() < 0.5) {
+        personal += PersonalName[Math.floor(PersonalName.length * Math.random())];
+    }
+    document.getElementById("wifeName").innerHTML = sur + personal;
 }
 
 function generateBody() {
