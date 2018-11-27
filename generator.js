@@ -3,8 +3,9 @@ let wifeCounter = 0;
 
 function startGenerator() {
     if (wifeCounter) {
-        insertExWife(8);
+        insertExWife(9);
     }
+    generateName();
     generateBody();
     // generateAge();
     generateHair();
@@ -13,6 +14,8 @@ function startGenerator() {
     generateCharacter();
     generateCup();
     generateSkin();
+
+
     wifeCounter++;
     updateCounterText();
 }
@@ -58,6 +61,9 @@ function generateAttribute() {
 }
 function generateCharacter() {  
     randomData("character",Character_data);
+}
+function generateName() {
+    randomData("name",Name_data);
 }
 
 function normalDistribution(u, v) {
