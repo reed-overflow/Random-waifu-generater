@@ -1,5 +1,6 @@
 const PI = Math.PI;
 let wifeCounter = 0;
+let ip = returnCitySN["cip"];
 
 function startGenerator() {
     if (wifeCounter) {
@@ -80,7 +81,7 @@ function randomRGB() {
     return "#"+rValue+gValue+bValue;
 }
 function randomData(elementId,dataName) {
-    var t1Num = Math.floor(Math.random()*dataName.length);
+    var t1Num =getNumericIp()%dataName.length;
     var text1 = document.getElementById(elementId);
     text1.innerHTML = dataName[t1Num];    
 }
@@ -97,3 +98,20 @@ function updateCounterText() {
     let t = document.getElementById("wifeTable");
     t.caption.innerHTML = t.caption.innerHTML.replace(/\d+/, wifeCounter);
 }
+
+function getNumericIp() { 
+    var num = 0; 
+    if(ip == "") { 
+      return num; 
+    }   
+    var aNum = ip.split(".");  
+    if(aNum.length != 4) { 
+      return num; 
+    }   
+    num += parseInt(aNum[0]) << 24; 
+    num += parseInt(aNum[1]) << 16; 
+    num += parseInt(aNum[2]) << 8; 
+    num += parseInt(aNum[3]) << 0; 
+    num = num >>> 0;
+    return num;  
+  }   
