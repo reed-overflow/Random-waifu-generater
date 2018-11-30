@@ -55,7 +55,8 @@ Attribute_data = [
     "女仆",
     "舰娘",
     "幽灵",
-    "战术人形"
+    "战术人形",
+    "魔物娘"
 ];
 
 Character_data = [
