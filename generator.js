@@ -1,9 +1,22 @@
 const PI = Math.PI;
 let wifeCounter = 0;
 
+$(document).ready(function () {
+    createExWivesTableHeader();
+});
+
+function createExWivesTableHeader() {
+    let exWivesTableHeader = document.getElementById("exWivesTable").insertRow(0);
+    let rows = $("#wifeTable")[0].rows;
+    for (let i = 0; i < rows.length; i++) {
+        let cell = exWivesTableHeader.insertCell(i);
+        cell.innerHTML = rows[i].cells[0].innerHTML;
+    }
+}
+
 function startGenerator() {
     if (wifeCounter) {
-        insertExWife(8);
+        insertExWife();
     }
     generateBody();
     // generateAge();
@@ -84,13 +97,16 @@ function randomData(elementId,dataName) {
     var text1 = document.getElementById(elementId);
     text1.innerHTML = dataName[t1Num];    
 }
-function insertExWife(cellCount) {
+function insertExWife() {
+    let wifeTable = document.getElementById("wifeTable");
     let exWivesTable = document.getElementById("exWivesTable");
     let row = exWivesTable.insertRow(1);
-    let wifeTable = document.getElementById("wifeTable");
-    for (let i = 0; i <= cellCount; i++) {
+    let propertyCount = wifeTable.rows.length;
+
+    for (let i = 0; i < propertyCount; i++) {
         let cell = row.insertCell(i);
         cell.innerHTML = wifeTable.rows[i].cells[1].innerHTML;
+        cell.style.backgroundColor = wifeTable.rows[i].cells[1].style.backgroundColor;
     };
 }
 function updateCounterText() {
