@@ -123,9 +123,13 @@ function getCurrentWife() {
     return wife;
 }
 function insertExWife() {
-    if (wifeCounter++) {
+    if(wifeCounter) {
         let exWife = getCurrentWife();
         insertExWifeToTable(exWife);
+    }
+    else {
+        wifeCounter++;
+        updateCounterText();
     }
 }
 function insertExWifeToTable(exWife) {
