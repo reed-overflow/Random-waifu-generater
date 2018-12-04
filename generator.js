@@ -218,4 +218,5 @@ function killAllWives() {
         wifeTable.rows[i].cells[1].removeAttribute("style");
     }
     wifeCounter = 0;
+    updateCounterText();
 }
