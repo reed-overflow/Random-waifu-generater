@@ -185,6 +185,8 @@ function retriveWives() {
     let currWife = JSON.parse(storage.getItem("currWife"));
     if (currWife) {
         setCurrWife(currWife);
+        wifeCounter++;
+        updateCounterText();
     }
 }
 function setCurrWife(currWife) {
